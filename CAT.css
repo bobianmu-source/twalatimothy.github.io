@@ -31,7 +31,7 @@ html {
   color: black;
 }
 #headerContent h1 {
-  background-color: rgb(13, 221, 13);
+  background-color: #008C51;
   padding: 10px;
   margin: 0;
 }
@@ -55,7 +55,7 @@ html {
 /* Changed: Switched to flexbox */
 /* Navigation */
 #topMenu {
-  background-color: rgb(8, 206, 8);
+  background-color: #008C51;
   padding: 10px 20px;
   font-size: 1.2em;
   overflow: hidden;
