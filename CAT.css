@@ -1,0 +1,619 @@
+/* Reset and basic styles */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#topMenu a.active {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* --- Added: Page Load Transition --- */
+/* Header */
+#headerContent {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+#headerContent h1 {
+  background-color: rgb(13, 221, 13);
+  padding: 10px;
+  margin: 0;
+}
+#headerContent p {
+  font-style: italic;
+  font-size: larger;
+}
+/* Scroll Progress Bar */
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px; /* thin bar */
+  background: grey; /* color of the bar */
+  width: 0%; /* starts empty */
+  z-index: 300; /* above nav */
+  transition: width 0.1s linear;
+}
+
+/* --- Navigation --- */
+/* Changed: Switched to flexbox */
+/* Navigation */
+#topMenu {
+  background-color: rgb(8, 206, 8);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  overflow: hidden;
+  position: sticky;
+  top: 55px; /* <--- Changed to 55px */
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#topMenu a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+#topMenu a:hover {
+  background-color: grey;
+}
+
+/* Added: Search Bar Styles */
+.search-container {
+  display: flex;
+}
+#searchInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 0.9em;
+}
+#searchButton {
+  padding: 5px 10px;
+  border: none;
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9em;
+}
+#searchButton:hover {
+  background-color: #555;
+}
+
+/* Main Content Sections */
+main section {
+  padding: 40px 20px;
+}
+
+/* Banner Image Section */
+#bannerImage {
+  background-image: url("WhatsApp Image 2025-11-11 at 08.45.252.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Changed from 180vh, which is very tall */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.banner-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+#bannerImage h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+#bannerImage p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+#bannerImage button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: aqua;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#bannerImage button:hover {
+  background-color: grey;
+}
+
+/* Content Wrapper for Sections */
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* About Section */
+#About {
+  background-image: url("WhatsApp Image 2025-11-11 at 19.19.34.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh; /* Changed from 250vh */
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: flex-end; /* push content to bottom */
+  padding: 40px 20px; /* breathing room at bottom + sides */
+}
+#About > div {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* extra gap above bottom edge */
+}
+
+/* Services Section */
+/* Find your existing #services block or create it if it's missing */
+#services {
+  padding: 40px 20px;
+
+  /* --- Add/Modify these lines for the background image --- */
+  background-image: url('WhatsApp Image 2025-11-11 at 19.19.35.jpeg'); /* <--- CHANGE THIS TO YOUR IMAGE PATH */
+  background-size: cover;        /* Ensures the image covers the entire section */
+  background-position: center;   /* Centers the image */
+  background-repeat: no-repeat;  /* Prevents the image from tiling */
+  min-height: 400px;             /* Ensure the section is tall enough to show the image */
+  color: white;                  /* Change text color for better contrast on a dark image */
+  /* --- End of background image additions --- */
+}
+
+/* You might also want to adjust list item color if the background is dark */
+#services ul {
+  list-style: none;  /* Removes bullets */
+  padding: 0;        /* Removes default browser padding */
+  margin: 0 auto;    /* Removes default margin and helps centering */
+  width: 100%;       /* Ensures the list fills the content box */
+  max-width: 500px;  /* Stops the list from getting too wide */
+}
+
+#services li {
+  font-size: 1.2em;
+  margin-bottom: 18px; /* Adds space between each service */
+  /* Text will be centered by the parent .content-wrapper */
+}
+
+/* Also ensure your content-wrapper background is transparent if needed */
+#services .content-wrapper {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* For dark mode, you might want to adjust the overlay or image */
+body.dark-mode #services {
+  /* You could use a different image for dark mode, or adjust the overlay */
+  background-image: url('your-service-background-dark.jpg'); /* Optional: different dark mode image */
+}
+body.dark-mode #services .content-wrapper {
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for dark mode */
+}
+
+/* Added: Project Gallery / Image Switcher Styles */
+#projects {
+  background-color: #f4f4f4;
+}
+.gallery-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* To keep images inside rounded border */
+}
+/* Find this block and replace it */
+.gallery-slide {
+  display: none; 
+  padding: 20px;
+  
+  /* --- Change these lines --- */
+  height: 100%;            /* Replaces min-height */
+  box-sizing: border-box;  /* Ensures padding is included in height */
+  /* --- End of changes --- */
+
+  /* These are still set by your JavaScript */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gallery-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.gallery-slide h3 {
+    font-size: 1.5em;
+}
+.slide-caption {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 15px;
+  color: #555;
+}
+/* Show the first slide */
+.gallery-slide:first-child {
+  display: flex;
+}
+/* Next/prev buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  
+  /* Changed: Make it a circle */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  
+  /* Changed: Center the arrow text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Changed: Perfect vertical center */
+  transform: translateY(-50%); 
+  
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.4s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4); /* Slightly darker */
+}
+
+/* Position them */
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Contacts Section */
+#contacts form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#contacts input,
+#contacts textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#contacts button {
+  padding: 10px;
+  font-size: 1em;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#contacts button:hover {
+  background-color: grey;
+}
+
+/* Footer */
+footer {
+  background-color: grey;
+  padding: 20px; /* Increased padding */
+  text-align: center;
+}
+/* Added: Footer Contact Info Styles */
+.contact-info {
+  margin-bottom: 15px;
+}
+.contact-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Changed: Make nav stack */
+  #topMenu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .search-container {
+    width: 90%;
+    margin-top: 5px;
+  }
+  #searchInput {
+    width: 100%;
+  }
+
+  #bannerImage {
+    height: 500px;
+  }
+  #bannerImage h2 {
+    font-size: 2em;
+  }
+  #bannerImage p {
+    font-size: 1em;
+  }
+}
+#progressBar {
+  opacity: 0;
+  transition: width 0.1s linear, opacity 0.3s ease;
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+  background-color: #181818; /* softer dark background */
+  color: #e0e0e0; /* light text */
+}
+
+/* Header */
+body.dark-mode #headerContent {
+  background-color: #222;
+  color: #f0f0f0;
+}
+body.dark-mode #headerContent h1 {
+  background-color: #333;
+  color: #f0f0f0;
+}
+body.dark-mode #headerContent p {
+  color: #ccc;
+}
+
+/* Navigation */
+body.dark-mode #topMenu {
+  background-color: #222;
+}
+body.dark-mode #topMenu a {
+  color: #f0f0f0;
+}
+body.dark-mode #topMenu a:hover {
+  background-color: #333;
+}
+/* Added: Dark mode for search */
+body.dark-mode #searchInput {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+body.dark-mode #searchButton {
+  background-color: #555;
+  color: #f0f0f0;
+}
+
+/* Banner */
+body.dark-mode #bannerImage {
+  color: #f0f0f0;
+}
+body.dark-mode .banner-content {
+  background: rgba(0, 0, 0, 0.7);
+}
+body.dark-mode #bannerImage button {
+  background-color: #444;
+  color: #f0f0f0;
+}
+body.dark-mode #bannerImage button:hover {
+  background-color: #666;
+}
+
+/* About Section */
+body.dark-mode #About {
+  background-color: #111; /* fallback if image is dark */
+}
+body.dark-mode #About > div {
+  background: #242424;
+  color: #f0f0f0;
+}
+
+/* Added: Dark mode for Projects */
+body.dark-mode #projects {
+  background-color: #1e1e1e;
+}
+body.dark-mode .gallery-container {
+  background: #2a2a2a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .slide-caption {
+    color: #aaa;
+}
+body.dark-mode .gallery-slide h3, 
+body.dark-mode .gallery-slide p {
+    color: #f0f0f0;
+}
+
+
+/* Services Section */
+body.dark-mode #services {
+  background-color: #1e1e1e;
+}
+body.dark-mode #services li {
+  color: #ddd;
+}
+
+/* Contacts Section */
+body.dark-mode #contacts {
+  background-color: #1e1e1e;
+}
+body.dark-mode #contacts input,
+body.dark-mode #contacts textarea {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+body.dark-mode #contacts button {
+  background-color: #444;
+  color: #f0f0f0;
+}
+body.dark-mode #contacts button:hover {
+  background-color: #666;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background-color: #222;
+  color: #f0f0f0;
+}
+/* Added: Dark mode for footer links */
+body.dark-mode .contact-info a {
+    color: #f0f0f0;
+}
+
+
+/* Toggle Switch */
+.theme-switch {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  z-index: 300; /* above nav */
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "🌙"; /* default icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: aqua;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+  content: "☀️"; /* sun icon when checked */
+}
+/* Smooth transition for theme changes */
+body,
+#headerContent,
+#topMenu,
+#bannerImage,
+#About > div,
+#services,
+#projects, /* Added */
+.gallery-container, /* Added */
+#contacts,
+footer,
+#contacts input,
+#contacts textarea,
+#contacts button,
+#bannerImage button {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+/* --- Header Banner --- */
+#headerContent {
+  text-align: center;
+  padding: 20px;
+  background-color: grey; /* This is a nice blue - change as you like! */
+  color: white;             /* This makes the text white */
+}
+
+#headerContent h1 {
+  margin: 0;
+  font-size: 2.5em; /* Example: make the name bigger */
+}
+
+#headerContent p {
+  font-style: italic;
+  font-size: 1.7em; /* Example: make the subtitle a bit bigger */
+  margin: 5px 0 0;
+}
+/* --- Page Load Fade-In (CSS-Only) --- */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* This applies the animation to the body */
+body {
+  animation: fadeInPage 3.0s ease-out; /* Adjust 1.2s as you like */
+}
